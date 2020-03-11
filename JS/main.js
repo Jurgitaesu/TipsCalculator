@@ -36,4 +36,5 @@ if (amount || percentSelection || customersTotal == "") {
         tips = amount * percentSelection / 100 / customersTotal;
         swal(`Iš viso jūs paliekate po ${tips} Eur arbatpinigių`);
     }
+   }
 })
