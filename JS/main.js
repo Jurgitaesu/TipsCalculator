@@ -11,14 +11,17 @@ form.addEventListener("submit", (e) => {
     form["select"].value = "";
     form["customers"].value = "";
 
-    if (amount.value == null) {
+if (amount || percentSelection || customersTotal == "") {
         swal(`Jūs neįvedėte visų duomenų`);
-    } else if (percentSelection == "30") {
-        tips = amount * percentSelection / 100 / customersTotal;
-        swal(`Iš viso jūs paliekate po ${tips} Eur arbatpinigių`);
+    }
+    
+    if (amount && percentSelection && customersTotal != "") {
+        if (percentSelection == "30") {
+            tips = amount * percentSelection / 100 / customersTotal;
+            swal(`Iš viso jūs paliekate po ${tips} Eur arbatpinigių`);
 
-    } else if (percentSelection.textContent = "20% - Labai geras") {
-        tips = amount * percentSelection / 100 / customersTotal;
+        } else if (percentSelection == "20") {
+            tips = amount * percentSelection / 100 / customersTotal;
         swal(`Iš viso jūs paliekate po ${tips} Eur arbatpinigių`);
 
     } else if (percentSelection = "10") {
